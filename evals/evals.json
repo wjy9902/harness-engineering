@@ -1,0 +1,53 @@
+{
+  "skill_name": "harness-engineering",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我看看这个项目的 agent 可读性怎么样，agent 老是写出重复的工具函数，我该怎么办",
+      "expected_output": "Should produce a legibility scorecard with 7 dimensions scored 0-10, identify the duplicate utility pattern as a linting/enforcement gap, and provide actionable steps to fix it",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我要用 agent 做一个大重构，跨好几个 session，怎么防止它丢失上下文",
+      "expected_output": "Should recommend the two-agent pattern (initializer + coding agent), feature list in JSON, progress file, session startup ritual, and memory bridge practices",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "agent 总是违反我们的架构分层，service 层直接 import 了 UI 组件，怎么从根本上解决",
+      "expected_output": "Should recommend custom linter rules with remediation-focused error messages, CI enforcement, and architectural red lines - not just documentation",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "The AI keeps breaking things when it touches our codebase. Every PR from the agent introduces subtle bugs that our tests don't catch. How do I fix this?",
+      "expected_output": "Should diagnose missing feedback loops (sensors), build test infrastructure, set up self-verification patterns, and create CLAUDE.md with anti-patterns. English prompt, Python/FastAPI project.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "我们有一个 Go 的 monorepo，多个服务，想让 agent 能安全地在上面工作，从零开始搭建",
+      "expected_output": "Should do full harness setup: CLAUDE.md, ARCHITECTURE.md, setup script, lint rules adapted for Go (go vet, staticcheck), worktree scripts. Non-JS ecosystem.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "agent 写的代码太多垃圾了，dead code 到处都是，每次都要花半天手动清理",
+      "expected_output": "Should focus on garbage collection section: slop catalog, scheduled automations, cleanup scripts, linter rules for dead code detection. Vague phrasing, garbage collection focus.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "I need to migrate our Django app from class-based views to function-based views with DRF. It's about 80 endpoints across 12 apps. How should I structure the agent workflow?",
+      "expected_output": "Should recommend two-agent pattern adapted for Django/Python, feature list with endpoints, progress tracking, session protocol. English, Python ecosystem, long-task focus.",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "agent 不听话，老是自作主张改我没让它改的东西",
+      "expected_output": "Should diagnose as missing constraints/guardrails, build CLAUDE.md with explicit boundaries, set up freeze/guard patterns, pre-commit hooks. Very vague phrasing test.",
+      "files": []
+    }
+  ]
+}
