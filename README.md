@@ -79,16 +79,18 @@ The gap is purely execution. Without the skill, Claude gives excellent conceptua
 
 ### Test Scenarios
 
-| Scenario | Stack | What It Tests |
-|----------|-------|---------------|
-| Audit repo slop | TypeScript/React | Full scorecard + scaffold |
-| Long-task handoff | Python/FastAPI | Two-agent pattern, feature list, session protocol |
-| Architecture drift | TypeScript/Next.js | Custom lint rules, guard tests |
-| Feedback loops | Python/FastAPI | Async compliance, architecture enforcement |
-| Go monorepo setup | Go (3 services) | depguard, cross-service import guards |
-| Garbage collection | TypeScript/Next.js | Dead code detection, knip setup |
-| Django migration | Django/DRF | AST-based migration linter, 80-endpoint tracking |
-| Agent overreach | TypeScript/React | Scope guards, pre-commit hooks |
+| Scenario | Stack | Language | What It Tests |
+|----------|-------|----------|---------------|
+| Audit repo slop | TypeScript/React | Chinese | Full scorecard + scaffold |
+| Long-task handoff | Python/FastAPI | Chinese | Two-agent pattern, feature list, session protocol |
+| Architecture drift | TypeScript/Next.js | Chinese | Custom lint rules, guard tests |
+| Feedback loops | Python/FastAPI | English | Async compliance, architecture enforcement |
+| Go monorepo setup | Go (3 services) | Chinese | depguard, cross-service import guards |
+| Garbage collection | TypeScript/Next.js | Chinese | Dead code detection, knip setup |
+| Django migration | Django/DRF | English | AST-based migration linter, 80-endpoint tracking |
+| Agent overreach | TypeScript/React | Chinese | Scope guards, pre-commit hooks |
+
+Evals use both Chinese and English prompts by design — the skill should produce identical quality regardless of prompt language. Benchmark confirms no language-dependent behavior differences.
 
 ## How It Works
 

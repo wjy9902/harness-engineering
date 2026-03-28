@@ -164,6 +164,27 @@ configs, generate these files tailored to the specific project:
 5. **Show the user**: Present what was created with a brief explanation of why each file
    matters for agent reliability.
 
+### Keep It Alive
+
+Generated docs rot fast. A stale CLAUDE.md is worse than none — it actively misleads
+agents. Every file you create should come with a built-in freshness mechanism:
+
+1. **Tie docs to code mechanically**: Add a CI check or pre-commit hook that flags when
+   source files change but their companion docs don't. For example, if `src/services/`
+   is restructured but `docs/ARCHITECTURE.md` hasn't been touched, warn.
+2. **Make docs verifiable**: Commands in CLAUDE.md should be actual commands — if they
+   stop working, `scripts/verify.sh` or CI will catch it. Avoid prose-only docs that
+   can silently drift.
+3. **Prefer code over prose**: Architecture guard tests enforce rules even when docs are
+   stale. A lint rule that blocks upward imports never goes out of date. Encode the most
+   critical rules as tests or lint, and let docs be the explanation layer on top.
+4. **Scheduled freshness audits**: Set up a weekly agent scan (see
+   `references/scheduled-automations.md`) that checks for stale references — renamed
+   files, removed modules, outdated commands.
+
+The principle: **the harness should be self-maintaining**. If keeping a doc current
+requires human discipline alone, it will fail. Attach a sensor to it.
+
 ### Don't Overdo It
 
 Start with CLAUDE.md + ARCHITECTURE.md + setup script. These three files alone solve 70%
